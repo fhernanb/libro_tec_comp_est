@@ -1,0 +1,74 @@
+--- 
+title: "Plantilla para libros con bookdown"
+author: "Autor 1 Fulanito, Autor 2 Sutanito"
+date: "`r Sys.Date()`"
+documentclass: krantz
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+colorlinks: yes
+lot: yes
+lof: yes
+site: bookdown::bookdown_site
+description: "Una plantilla sencilla para crear libros con bookdown."
+github-repo: fhernanb/plantilla_libros_con_bookdown
+graphics: yes
+cover-image: images/cover.jpg
+---
+
+```{r setup, include=FALSE}
+options(
+  htmltools.dir.version = FALSE, formatR.indent = 2, width = 55, digits = 4
+)
+
+# install the packages needed by this book; you fill out c(), e.g. c('ggplot2', 'dplyr')
+lapply(c('xfun'), function(pkg) {
+  if (system.file(package = pkg) == '') install.packages(pkg)
+})
+```
+
+# Bienvenida {-}
+
+Bienvenido, espero que esta plantilla le sea útil para que pueda crear sus propios libros usando el paquete **bookdown** [@R-bookdown] de R.
+
+```{r echo=FALSE, out.width="50%", fig.align='center'}
+knitr::include_graphics("images/cover.jpg")
+```
+
+## Estructura del libro {-}
+
+El capítulo \@ref(intro) es una introducción, el capítulo \@ref(ecua) muestra como incluir ecuaciones con LaTeX y en el capítulo \@ref(imagenes) se da una explicación sencilla de como incluir imágenes.
+
+## Información del software utilizado y convenciones{-}
+
+Para esta plantilla se usó el paquete **knitr**\index{knitr} [@xie2015] y el paquete **bookdown**\index{bookdown} [@R-bookdown] para compilar el libro. La información de la sesión de R usada se muestra abajo:
+
+```{r}
+xfun::session_info()
+```
+
+Los nombres de los paquetes se escriben en negrita (por ejemplo, **rmarkdown**), el código dentro de un párrafo y el nombre de los archivos se escribe con fuente de máquina de escribir (por ejemplo, `knitr::knit('foo.Rmd')`). Los nombres de las funciones van seguidas de paréntesis (por ejemplo, `dnorm()`).
+
+## Bloques informativos {-}
+En varias partes del libro usaremos bloques informativos para resaltar algún aspecto importante. Abajo se encuentra un ejemplo de los bloques y su significado.
+
+```{block2, type='rmdnote'}
+Esta será una nota aclaratoria.
+```
+
+```{block2, type='rmdtip'}
+Esta será una sugerencia.
+```
+
+```{block2, type='rmdwarning'}
+Esta será una advertencia.
+```
+
+## Agradecimientos {-}
+
+Gracias a todas las personas que han contribuído con sus comentarios para mejorar este material.
+
+```{block2, type='flushright', html.tag='p'}
+Fulanito de tal.
+Sutanito de tal.
+```

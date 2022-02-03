@@ -226,7 +226,7 @@
 
 \title{Técnicas computacionales en estadística}
 \author{Freddy Hernández}
-\date{2022-02-01}
+\date{2022-02-03}
 
 \begin{document}
 \maketitle
@@ -330,17 +330,14 @@ Esta será una advertencia.
 Gracias a todas las personas que han contribuído con sus comentarios para mejorar este material.
 
 \begin{flushright}
-Fulanito de tal.
-Sutanito de tal.
+Freddy Hernández Barajas
 \end{flushright}
 
 \hypertarget{sobre-los-autores}{%
 \chapter*{Sobre los autores}\label{sobre-los-autores}}
 
 
-Fulanito de tal es profesor de la Universidad X y bla bla bla.
-
-Sutanito de tal es investigador del Instituto Y y bla bla bla.
+Freddy Hernández Barajas es profesor de la Universidad Nacional de Colombia sede Medellín.
 
 \mainmatter
 
@@ -348,158 +345,6 @@ Sutanito de tal es investigador del Instituto Y y bla bla bla.
 \chapter{Introducción}\label{intro}}
 
 Una de las ventajas de usar el paquete \textbf{bookdown} \citep{R-bookdown} es que se puede escribir código de R y las salidas estarán incluídas automáticamente en el documento.
-
-\hypertarget{incluyendo-salidas-de-r}{%
-\section{Incluyendo salidas de R}\label{incluyendo-salidas-de-r}}
-
-A continuación se muestran los números de Tukey (minimum, lower-hinge, median, upper-hinge, maximum) generados con la función \texttt{fivenum()} aplicada a una muestra aleatoria de una normal estándar.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{x }\OtherTok{\textless{}{-}} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{80}\NormalTok{)}
-\FunctionTok{fivenum}\NormalTok{(}\AttributeTok{x=}\NormalTok{x)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] -2.4152 -0.8874 -0.1103  0.4552  2.0839
-\end{verbatim}
-
-\hypertarget{incluyendo-figuras}{%
-\section{Incluyendo figuras}\label{incluyendo-figuras}}
-
-La Figura \ref{fig:hello} muestra un diagrama de dispersión para la distancia en función de la velocidad.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{par}\NormalTok{(}\AttributeTok{mar =} \FunctionTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{1}\NormalTok{, .}\DecValTok{1}\NormalTok{))}
-\FunctionTok{plot}\NormalTok{(cars, }\AttributeTok{pch =} \DecValTok{19}\NormalTok{, }\AttributeTok{col=}\StringTok{\textquotesingle{}tomato\textquotesingle{}}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-\includegraphics[width=0.9\linewidth]{plantilla_bookdown_files/figure-latex/hello-1} \caption{Diagrama de dispersión para la distancia versus la velocidad}\label{fig:hello}
-\end{figure}
-
-\hypertarget{incluyendo-tablas}{%
-\section{Incluyendo tablas}\label{incluyendo-tablas}}
-
-La Tabla \ref{tab:iris} muestra las primeras líneas de la famosa base de datos Iris.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}
-  \FunctionTok{head}\NormalTok{(iris), }\AttributeTok{caption =} \StringTok{\textquotesingle{}Encabezado de la base de datos Iris.\textquotesingle{}}\NormalTok{,}
-  \AttributeTok{booktabs =} \ConstantTok{TRUE}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{table}
-
-\caption{\label{tab:iris}Encabezado de la base de datos Iris.}
-\centering
-\begin{tabular}[t]{rrrrl}
-\toprule
-Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
-\midrule
-5.1 & 3.5 & 1.4 & 0.2 & setosa\\
-4.9 & 3.0 & 1.4 & 0.2 & setosa\\
-4.7 & 3.2 & 1.3 & 0.2 & setosa\\
-4.6 & 3.1 & 1.5 & 0.2 & setosa\\
-5.0 & 3.6 & 1.4 & 0.2 & setosa\\
-\addlinespace
-5.4 & 3.9 & 1.7 & 0.4 & setosa\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\hypertarget{ecua}{%
-\chapter{Ecuaciones}\label{ecua}}
-
-En esta capítulo se muestra como crear ecuaciones con LaTeX.
-
-\hypertarget{ecuaciones-dentro-de-un-puxe1rrafo}{%
-\section{Ecuaciones dentro de un párrafo}\label{ecuaciones-dentro-de-un-puxe1rrafo}}
-
-Se pueden incluir ecuaciones dentro de un párrafo colocando la expresión dentro de \texttt{\$\ \$}. Por ejemplo, para escribir esta fórmula \(f(x) = x^2 + 1\) se escribe \texttt{\$f(x)\ =\ x\^{}2\ +\ 1\$}.
-
-\hypertarget{ecuaciones-entre-puxe1rrafos}{%
-\section{Ecuaciones entre párrafos}\label{ecuaciones-entre-puxe1rrafos}}
-
-Se pueden colocar ecuaciones entre párrafos colocando la expresión de dos formas:
-
-\begin{itemize}
-\tightlist
-\item
-  \texttt{\$\$\ aqui\ la\ expresion\ \$\$}.
-\item
-  \texttt{\textbackslash{}begin\{equation\}\ aqui\ la\ expresion\ \textbackslash{}end\{equation\}}.
-\end{itemize}
-
-La siguiente expresión
-
-\[
-F = m \times a
-\]
-
-se obtuvo escribiendo
-
-\texttt{\$\$\ F\ =\ m\ \textbackslash{}times\ a\ \$\$}
-
-La expresión \eqref{eq:binom} siguiente
-
-\begin{equation} 
-  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
-  \label{eq:binom}
-\end{equation}
-
-se obtuvo escribiendo
-
-\begin{verbatim}
-\begin{equation} 
-  f\left(k\right) = \binom{n}{k} p^k\left(1-p\right)^{n-k}
-  \label{eq:binom}
-\end{equation} 
-\end{verbatim}
-
-y para referenciarla se escribe \texttt{\textbackslash{}@ref(eq:binom)} con lo cual se obtiene la numeración \eqref{eq:binom}.
-
-\begin{rmdtip}
-Para obtener más detalles de cómo incluir ecuaciones se recomienda consultar este \href{https://bookdown.org/yihui/bookdown/markdown-extensions-by-bookdown.html\#theorems}{enlace}.
-\end{rmdtip}
-
-\hypertarget{imagenes}{%
-\chapter{Incluyendo imágenes}\label{imagenes}}
-
-Se pueden incluir imágenes en el libro. La imágen debe estar almacenada en la carpeta \texttt{images}. A continuación un ejemplo de una imágen.
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.6\linewidth]{images/svm} 
-
-}
-
-\caption{Ilustración de svm.}\label{fig:rmarkdown}
-\end{figure}
-
-\hypertarget{referencias}{%
-\chapter{Incluyendo referencias}\label{referencias}}
-
-Es posible incluir artículos, libros y otro tipo de material como referencias. Para hacerlo se deben seguir los siguientes pasos:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  Colocar el libro o artículo en el archivo \texttt{book.bib} asignándole un alias.
-\item
-  Citar el libro o artículo usando la instrucción \texttt{@alias}.
-\end{enumerate}
-
-A continuación se muestran un párrafo en el cual se cita un artículo al inicio del párrafo y se hace por medio de la instrucción \texttt{@Cortes1995} ya que el alias usado para el artículo fue Cortes1995. La referencia que aparece al inicio es ``Cortes and Vapnik (1995)'', esta referencia también aparecerá en la sección de Bibliografía.
-
-\citet{Cortes1995} en el artículo titulado ``Support-Vector Networks'' propusieron las máquinas de soporte vectorial (svm) para el problema de clasificación.
 
 \cleardoublepage
 

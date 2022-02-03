@@ -10,8 +10,8 @@ colorlinks: yes
 lot: yes
 lof: yes
 site: bookdown::bookdown_site
-description: "Una plantilla sencilla para crear libros con bookdown."
-github-repo: fhernanb/plantilla_libros_con_bookdown
+description: "Apuntes sobre técnicas computaciones en estadística."
+github-repo: fhernanb/libro_tec_comp_est
 graphics: yes
 cover-image: images/cover.jpg
 ---
@@ -69,6 +69,5 @@ Esta será una advertencia.
 Gracias a todas las personas que han contribuído con sus comentarios para mejorar este material.
 
 ```{block2, type='flushright', html.tag='p'}
-Fulanito de tal.
-Sutanito de tal.
+Freddy Hernández Barajas
 ```
